@@ -13,7 +13,7 @@ function recentAct(id) {
         "searching": false,
         "order": [],
         "ajax": {
-            url: "serverProcessing/tabelrecent/get_data/" + id,
+            url: "serverProcessing/tabelRecent/get_data/" + id,
             type: "POST"
 
         },
