@@ -1,0 +1,293 @@
+/* START OF NAVBAR */
+
+/* first of left section */
+
+.btn-search {
+    margin-left: 10px;
+    padding: 8px 25px 8px 25px;
+    border: none;
+    border-radius: 15px;
+    background-color: #075385;
+    color: white;
+    /* box-shadow:5px 3px 5px 1px #555 */
+}
+
+
+
+.form-error {
+    border: 1px solid #f01d1d;
+}
+
+.form-success{
+    border: 1px solid green;
+}
+
+.btn-search:hover {
+    background-color: #2C73A7
+}
+
+.cari-input {
+    border-radius: 15px;
+}
+
+.custom-nav {
+    background: #348ECD;
+    height: 80px;
+    -webkit-box-shadow: 0px 1px 10px 5px #aaa;
+    box-shadow: 0px 1px 10px 5px #aaa
+}
+
+.custom-nav ul {
+    width: 100%;
+}
+
+.form-control-feedback2 {
+    margin-top: 6px;
+    height: 23px;
+    border: 0px;
+    color: #000;
+    line-height: 22px;
+    font-size: 25px;
+}
+
+.sembunyi {
+    display: none;
+}
+
+
+.nav-center {
+    padding: 22px;
+}
+
+/* last of left section */
+
+/* first of right section */
+
+.simbol {
+    margin-top: 18px;
+    color: white;
+    border-right: 1px solid white;
+    padding-right: 10px;
+    padding-left: 0px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.simbol2 {
+    margin-top: 18px;
+    color: white;
+    padding-right: 10px;
+    padding-left: 0px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.user-font {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font-weight: 700;
+    vertical-align: super;
+}
+
+/* last of right section */
+
+/* END OF NAVBAR */
+
+/* START OF CONTENT */
+
+/* fisrt of main */
+
+.main-panel {
+    border-radius: 15px;
+    -webkit-box-shadow: 6px 6px 15px 0px #eee;
+    box-shadow: 6px 6px 15px 0px #eee;
+}
+
+
+.form-control {
+    border-radius: 15px;
+
+}
+
+.jarak {
+    margin-top: 10px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+    color: #222;
+}
+
+.selectdiv {
+    position: relative;
+    /*Don't really need this just for demo styling*/
+}
+
+.selectdiv:after {
+    content: '\f078';
+    font: normal normal normal 17px/1 FontAwesome;
+    color: #888;
+    right: 20px;
+    top: -4px;
+    padding: 10px 0px 0px 6px;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* IE11 hide native button (thanks Matt!) */
+
+select::-ms-expand {
+    display: none;
+}
+
+.selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    display: block;
+    width: 100%;
+    line-height: 1.75;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+
+#sosmed {
+    display: inherit;
+}
+
+#sosmed label {
+    margin-right: 30px;
+    border-radius: 15px;
+}
+
+#sosmed > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+#d_sosmed {
+    display: inherit;
+}
+
+#d_sosmed label {
+    margin-right: 30px;
+    border-radius: 15px;
+}
+
+#d_sosmed > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+#gender > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+#warga > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+#noID > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+#noID2 > .btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+
+    color: #fff;
+    background-color: #337AB7;
+}
+
+tr > .selected {
+    background-color: #348ecd1a;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgb(244, 251, 255)
+}
+
+.table-striped > tbody > tr:hover {
+    background-color: #aaa;
+}
+
+.detailCustomer > tbody > tr > td {
+    padding: 5px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    left: 40%;
+    top: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+}
+
+.progress-bar-disabled {
+    background-color: #8c8585;
+}
+
+
+/* Custom */
+
+.kepala {
+    color: #348ECD;
+}
+
+.tinggi {
+    height: 543px;
+}
+
+.btn-normal {
+    padding: 6px 12px;
+}
+
+/* last of main */
+
+/* END OF CONTENT */

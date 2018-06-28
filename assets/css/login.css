@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.login-page {
+    width: 400px;
+    padding: 15% 0 0;
+    margin: auto;
+}
+
+
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 400px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #005DAA;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form-group.has-feedback span {
+  display: block !important;
+}
+
+.form-horizontal .form-group {
+  margin-right: 0;
+  margin-left: 0
+}
+
+.form-control-feedback {
+  margin-top: 6px;
+  height: 23px;
+  color: #bbb;
+  line-height: 24px;
+  font-size: 15px
+}
+
+.form-control-feedback.left {
+  border-right: 1px solid #ccc;
+  left: 1px
+}
+
+.form-control-feedback.right {
+  border-left: 1px solid #ccc;
+  right: 13px
+}
+
+.form-control.has-feedback-left {
+  padding-left: 45px
+}
+
+.form-control.has-feedback-right {
+  padding-right: 45px
+}
+
+.form-group {
+  margin-bottom: 10px
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #004287;
+}
+
