@@ -14,12 +14,12 @@
                 <h3 style="font-size:30px; margin-left: 30px">Main</h3>
                 <ul class="nav side-menu">
                     <li><a href="<?= base_url()?>dashboard"><i class="fa fa-home"></i> Dashboard</a></li>
-                    <?php if($this->session->userdata('userlevel') == 0) {?>
+                    <?php if($this->session->userdata('ldap_level') == 0) {?>
                     <li><a href="<?= base_url()?>user"><i class="fa fa-user"></i> Administrasi User</a></li>
                     <li><a href="<?= base_url()?>graph"><i class="fa fa-bar-chart"></i> Grafik</a></li>
                     <?php }; ?>
                     <li><a href="<?= base_url()?>archive"><i class="fa fa-archive"></i> Arsip</a></li>
-                    <?php if($this->session->userdata('userlevel') == 0) {?>
+                    <?php if($this->session->userdata('ldap_level') == 0) {?>
                     <li><a data-toggle="modal" data-target="#modalLaporan"><i class="fa fa-file"></i> Laporan</a></li>
                     <!--                    <li><a href="<?= base_url()?>laporan"><i class="fa fa-file"></i> Laporan</a></li>-->
                     <li>

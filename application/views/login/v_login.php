@@ -1,10 +1,28 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/login.css">
 
-<div ng-app="loginApp" class="container">
+<!-- NOTE : Notifikasi - umum -->
+<?php if(!empty($this->session->flashdata('Failed'))) {?>
+<div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <?= $this->session->flashdata('Failed') ?>
+</div>
+<?php } else if(!empty($this->session->flashdata('Success'))) {?>
+<div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <?= $this->session->flashdata('Success') ?>
+</div>
+<?php }else if(!empty($this->session->flashdata('Info'))) {?>
+<div class="alert alert-info alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <?= $this->session->flashdata('Info') ?>
+</div>
+<?php }?>
+
+<div class="container">
     <div class="login-page">
 
-        <div class="form" name="myForm" ng-controller="loginController">
-            <form>
+        <div class="form" name="myForm">
+            <form method="post" action="<?= base_url('auth')?>">
 
                 <div style="text-align: center; margin-bottom: 10px">
                     <center><img class="img-responsive" src="<?= base_url() ?>assets/img/logo.png"></center>
@@ -15,44 +33,15 @@
                 </div>
 
                 <div class="form-group has-feedback">
-                    <input name="username" ng-keydown="input()" class="form-control has-feedback-left" id="username" ng-model="username" type="email" placeholder="username" required />
+                    <input name="username" class="form-control has-feedback-left" id="username" type="email" placeholder="username" required />
                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input name="password" ng-keydown="input()" class="form-control has-feedback-left" id="password" ng-model="password" type="password" placeholder="password" required/>
+                    <input name="password" class="form-control has-feedback-left" id="password" type="password" placeholder="password" required />
                     <span class="fa fa-lock form-control-feedback left" aria-hidden="true"></span>
                 </div>
-                <button type="submit" ng-click="userCheck()">login</button>
-                <p></p>
-                <b><p style="color: red">{{tes}}</p></b>
+                <input type="submit" class="button" value="Login">
             </form>
         </div>
     </div>
 </div>
-
-<script>
-    var app = angular.module('loginApp', []);
-    app.controller('loginController', function($window, $scope, $http) {
-
-        $scope.input = function() {
-            $scope.tes = '';
-        }
-
-        $scope.userCheck = function() {
-            if (!$scope.username || !$scope.password) {
-                $scope.tes = 'Silahkan masukkan username dan password anda!';
-            } else {
-
-                $http.get('<?=base_url()?>login/auth/' + $scope.username + '/' + $scope.password).then(function(response) {
-                    $scope.hasil = response.data;
-                    if (!$scope.hasil.verified) {
-                        $scope.tes = 'Pastikan username dan password benar!';
-                    } else {
-                        window.location.href = '<?= base_url()?>login/auth_exec/' + $scope.username + '/' + $scope.password;
-                    }
-                })
-            }
-        };
-    });
-
-</script>

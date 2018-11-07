@@ -52,8 +52,8 @@ class M_user Extends CI_model{
     }
     
     // NOTE : user find
-    public function user_find($username,$pass){
-        $query = $this->db->query("SELECT a.id_user,a.nama,a.nameuser,a.passwd,a.divisi,b.nama as cabang,a.cabang as id_cabang, c.nama as nama_divisi,a.`level`,a.log from m01_user a left join m07_cabang b on a.cabang = b.id_cabang left join m06_divisi c on a.divisi = c.id_divisi where nameuser = '".$username."' AND passwd = '".sha1($pass)."' limit 1");
+    public function user_find($username){
+        $query = $this->db->query("SELECT a.id_user,a.nama,a.nameuser,a.passwd,a.divisi,b.nama as cabang,a.cabang as id_cabang, c.nama as nama_divisi,a.`level`,a.log from m01_user a left join m07_cabang b on a.cabang = b.id_cabang left join m06_divisi c on a.divisi = c.id_divisi where nameuser = '".$username."' limit 1");
         
         if ($query->num_rows() > 0) {
             return $query->row();
@@ -63,20 +63,19 @@ class M_user Extends CI_model{
     }
 
     // NOTE : Check username
-    public function username_check($username){
-        $valid = FALSE;
-        $query = $this->db
-        ->where('nameuser',$username)
-        ->limit(1)
-        ->get('m01_user');
-        if ($query->num_rows() > 0) {
-            $valid = FALSE;
-        } else {
-            $valid = TRUE;
-        }
-
-        return $valid;
+    public function username_check($where){
+        $query = $this->db->where($where)
+                          ->limit(1)
+                          ->get('m01_user');
+        return $query;
     }
+
+    //NOTE : Last Login
+    public function last_login($data,$where){
+        $this->db->where($where)
+        ->update('m01_user', $data);
+    }
+
 
     // NOTE : user input
     public function user_input($data){

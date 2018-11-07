@@ -7,8 +7,8 @@ class Graph extends CI_Controller {
     {
         parent::__construct();
 
-        if($this->session->userdata('islogincrm')!=NULL){
-            if($this->session->userdata('islogincrm')!=TRUE){
+        if($this->session->userdata('ldap_sso')!=NULL){
+            if($this->session->userdata('ldap_sso')!=TRUE){
                 redirect('login');
             }
         }else{
@@ -21,7 +21,7 @@ class Graph extends CI_Controller {
     }
 
     public function index(){
-        $level = $this->session->userdata('userlevel');
+        $level = $this->session->userdata('ldap_level');
 
         if($level == 0){
             $this->load->view('common/v_main-header');

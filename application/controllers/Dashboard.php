@@ -10,8 +10,8 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
 
-        if($this->session->userdata('islogincrm')!=NULL){
-            if($this->session->userdata('islogincrm')!=TRUE){
+        if($this->session->userdata('ldap_sso')!=NULL){
+            if($this->session->userdata('ldap_sso')!=TRUE){
                 redirect('login');
             }
         }else{
@@ -28,7 +28,7 @@ class Dashboard extends CI_Controller {
 
     public function index(){
 
-        $level = $this->session->userdata('userlevel');
+        $level = $this->session->userdata('ldap_level');
 
         
         $this->load->view('common/v_main-header');
@@ -42,8 +42,8 @@ class Dashboard extends CI_Controller {
             $data['divisi'] = $this->m_user->divisi_get(); 
             $this->load->view('backend/v_main',$data);
         }else if($level == 3 ){
-            $id_cabang = $this->session->userdata('id_cabang');
-            $id_divisi = $this->session->userdata('id_divisi'); 
+            $id_cabang = $this->session->userdata('ldap_branch_id');
+            $id_divisi = $this->session->userdata('ldap_division_id');
             if( $id_cabang == 110){
                 $data['komplain'] = $this->m_customer->complain_find_divisi($id_divisi);
             }else{
@@ -291,7 +291,7 @@ class Dashboard extends CI_Controller {
             $telp = $this->input->post('d_telp');
             $email = $this->input->post('d_email');
             $tmp_lahir = $this->input->post('d_tmplahir');
-            $updated_by = $this->session->userdata('nama');
+            $updated_by = $this->session->userdata('ldap_name');
             $updated_date = date('Y-m-d');
                 //ttl
                 $tahun = $this->input->post('d_tahun');

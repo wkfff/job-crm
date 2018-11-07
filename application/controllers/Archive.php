@@ -7,8 +7,8 @@ class Archive extends CI_Controller {
     {
         parent::__construct();
 
-        if($this->session->userdata('islogincrm')!=NULL){
-            if($this->session->userdata('islogincrm')!=TRUE){
+        if($this->session->userdata('ldap_sso')!=NULL){
+            if($this->session->userdata('ldap_sso')!=TRUE){
                 redirect('login');
             }
         }else{

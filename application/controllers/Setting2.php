@@ -7,8 +7,8 @@ class Setting2 extends CI_Controller {
     {
         parent::__construct();
 
-        if($this->session->userdata('islogincrm')!=NULL && $this->session->userdata('userlevel') == 0){
-            if($this->session->userdata('islogincrm')!=TRUE){
+        if($this->session->userdata('ldap_sso')!=NULL && $this->session->userdata('ldap_sso') == 0){
+            if($this->session->userdata('ldap_sso')!=TRUE){
                 redirect('login');
             }
         }else{
